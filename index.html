@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottory numbers!</title>
+</head>
+<body>
+    <h1>Lottory</h1>
+
+    <h2>Your Lotto numbers are: </h2>
+    <h2 class="for"></h2>
+    <h2> and: </h2>
+    <h2 class="while"></h2>
+</body>
+<script>
+
+    let refToFor = document.querySelector(".for");
+
+    let refToWhile = document.querySelector(".while");
+
+    let num = 0;
+    let str = "";
+
+
+    //for
+
+    for (num = 0; num < 6; num ++) {
+
+        let rand = Math.floor(Math.random() * 50);
+
+        str += "" + rand.toString() + (num < 5 ? " -": "");
+    }
+
+    console.log(str);
+
+    refToFor.textContent = str;
+
+    let number = 0;
+
+    str = "";
+
+    while (number < 6) {
+        rand = Math.floor(Math.random() * 49) + 1;
+        str += " " + rand.toString() + (number < 5 ? " -" : "");
+        number++;
+    }
+
+    console.log(str);
+    refToWhile.textContent = str;
+
+</script>
+</html>
